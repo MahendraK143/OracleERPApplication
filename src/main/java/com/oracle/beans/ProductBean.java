@@ -6,14 +6,42 @@ import java.util.List;
 
 public class ProductBean {
     private Long id;
+    private Long lineNo;
     private String productCode;
     private String name;
     private Double cost;
     private String description;
     private String moq;
+    private Integer quantity;
+    private Double totalCostByProduct;
     private List<ChildProduct> childProducts;
 
-    public String getProductCode() {
+    
+    public Double getTotalCostByProduct() {
+		return totalCostByProduct;
+	}
+
+	public void setTotalCostByProduct(Double totalCostByProduct) {
+		this.totalCostByProduct = totalCostByProduct;
+	}
+
+	public Long getLineNo() {
+		return lineNo;
+	}
+
+	public void setLineNo(Long lineNo) {
+		this.lineNo = lineNo;
+	}
+
+	public Integer getQuantity() {
+		return quantity;
+	}
+
+	public void setQuantity(Integer quantity) {
+		this.quantity = quantity;
+	}
+
+	public String getProductCode() {
         return productCode;
     }
 
@@ -60,16 +88,12 @@ public class ProductBean {
         this.childProducts = childProducts;
     }
 
-    @Override
-    public String toString() {
-        return "ProductBean{" +
-                "id=" + id +
-                ", productCode='" + productCode + '\'' +
-                ", name='" + name + '\'' +
-                ", cost=" + cost +
-                ", description='" + description + '\'' +
-                ", moq='" + moq + '\'' +
-                ", childProducts=" + childProducts +
-                '}';
-    }
+	@Override
+	public String toString() {
+		return "ProductBean [id=" + id + ", lineNo=" + lineNo + ", productCode=" + productCode + ", name=" + name
+				+ ", cost=" + cost + ", description=" + description + ", moq=" + moq + ", quantity=" + quantity
+				+ ", totalCostByProduct=" + totalCostByProduct + ", childProducts=" + childProducts + "]";
+	}
+
+    
 }

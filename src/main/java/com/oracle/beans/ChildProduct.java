@@ -12,7 +12,15 @@ public class ChildProduct {
     private Double cost;
     private String description;
     private String moq;
-    public Long getId() {
+    private String quantity;
+
+    public String getQuantity() {
+		return quantity;
+	}
+	public void setQuantity(String quantity) {
+		this.quantity = quantity;
+	}
+	public Long getId() {
         return id;
     }
     public void setId(Long id) {
@@ -50,16 +58,10 @@ public class ChildProduct {
     public void setProductCode(String productCode) {
         this.productCode = productCode;
     }
+	@Override
+	public String toString() {
+		return "ChildProduct [id=" + id + ", productCode=" + productCode + ", name=" + name + ", cost=" + cost
+				+ ", description=" + description + ", moq=" + moq + ", quantity=" + quantity + "]";
+	}
 
-    @Override
-    public String toString() {
-        return "ChildProduct{" +
-                "id=" + id +
-                ", productCode='" + productCode + '\'' +
-                ", name='" + name + '\'' +
-                ", cost=" + cost +
-                ", description='" + description + '\'' +
-                ", moq='" + moq + '\'' +
-                '}';
-    }
 }
