@@ -24,6 +24,7 @@ public class LoginController {
 	public String login(@ModelAttribute("user") User user, HttpServletRequest request, HttpServletResponse response,ModelMap map) {
 		map.put("navStatus", false);
 		map.put("navStatus", true);
+		map.put("TabActive", "DashBoard");
 		request.getSession().setAttribute("navStatus", true);
 		return "home";
 	}
