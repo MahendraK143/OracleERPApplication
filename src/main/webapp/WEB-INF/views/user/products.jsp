@@ -24,10 +24,12 @@
 
   <body id="reportsPage">
     <div class="container mt-5">
+    <form id="myForm" name="myForm" action="addToCart" method="post">
+    <input type="hidden" id="productsInCart" name="productsInCart" value="${sessionScope.productsInCart}" >
       <div class="row tm-content-row">
         <div class="col-sm-12 col-md-12 col-lg-8 col-xl-8 tm-block-col">
           <div class="tm-bg-primary-dark tm-block tm-block-products">
-            <a class="btn btn-primary btn-block text-uppercase mb-3" onclick="addProductsTocart('<%=application.getContextPath()%>');">Add To Cart</a>
+            <input type="submit" class="btn btn-primary btn-block text-uppercase mb-3" onclick="return addProductsTocart('<%=application.getContextPath()%>');" value="Add To Cart">
             <div class="tm-product-table-container">
               <table class="table table-hover tm-table-small tm-product-table">
                 <thead>
@@ -55,7 +57,7 @@
                       <td>${product.moq }1</td>
                       <td>${product.moq }2</td>
                       <td>${product.moq }3</td>
-                      <th scope="row"><input type="checkbox" value="${product.productCode}" name="cartlist" id="cartlist" onclick="addProductToCart('<%=application.getContextPath()%>','${product.productCode}')"/></th>
+                      <th scope="row"><input type="checkbox" value="${product.productCode}" name="cartlist" id="cartlist" onclick="addProductsToCart('<%=application.getContextPath()%>','${product.productCode}')"/></th>
                     </tr>
                   </c:forEach>
                 </c:if>
@@ -72,7 +74,9 @@
             -->
           </div>
         </div>
-      </div>
+      </div>    
+    </form>
+
     </div>
 
     <script src="js/jquery-3.3.1.min.js"></script>
