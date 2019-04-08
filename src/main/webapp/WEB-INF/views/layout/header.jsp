@@ -13,19 +13,37 @@
 		 <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mx-auto h-100">
                 <li class="nav-item">
+                	<c:if test="${TabActive eq 'DashBoard' }">
                     <a class="nav-link active" href="home">
                         <i class="fas fa-tachometer-alt"></i>
                         Dashboard
                         <span class="sr-only">(current)</span>
-                    </a>
+                    </a>                	
+                	</c:if>
+                	<c:if test="${TabActive ne 'DashBoard' }">
+                    <a class="nav-link" href="home">
+                        <i class="fas fa-tachometer-alt"></i>
+                        Dashboard
+                        <span class="sr-only">(current)</span>
+                    </a>                	
+                	</c:if>
+                	
                 </li>
                 <li class="nav-item">
+                <c:if test="${TabActive eq 'Products'}">
+                    <a class="nav-link active" href="products">
+                        <i class="fas fa-shopping-cart"></i>
+                        Products
+                    </a>
+                 </c:if>   
+                <c:if test="${TabActive ne 'Products' }">
                     <a class="nav-link" href="products">
                         <i class="fas fa-shopping-cart"></i>
                         Products
                     </a>
+                 </c:if>   
                 </li>
-                <li class="nav-item dropdown">
+<!--                 <li class="nav-item dropdown">
 
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">
@@ -40,12 +58,37 @@
                         <a class="dropdown-item" href="#">Yearly Report</a>
                     </div>
                 </li>
-
+ -->
                 <li class="nav-item">
-                    <a class="nav-link" href="accounts.html">
+                <c:if test="${TabActive eq 'OpenCart' }">
+                    <a class="nav-link active" href="openCart">
                         <i class="fas fa-shopping-cart"></i>
-                        Cart(0)
+                        Cart(<c:if test="${sessionScope.productList != null && sessionScope.productList.size()>0}">${sessionScope.productList.size()}</c:if>
+                        	<c:if test="${sessionScope.productList == null || sessionScope.productList.size()==0}">0</c:if>)
                     </a>
+                 </c:if>   
+                <c:if test="${TabActive ne 'OpenCart' }">
+                    <a class="nav-link" href="openCart">
+                        <i class="fas fa-shopping-cart"></i>
+                        Cart(<c:if test="${sessionScope.productList != null && sessionScope.productList.size()>0}">${sessionScope.productList.size()}</c:if>
+                        	<c:if test="${sessionScope.productList == null || sessionScope.productList.size()==0}">0</c:if>)
+                    </a>
+                 </c:if>   
+                </li>
+                
+                <li class="nav-item">
+                <c:if test="${TabActive eq 'OrderHistory' }">
+                    <a class="nav-link active" href="orderHistory">
+                        <i class="fas fa-shopping-cart"></i>
+                        Order History
+                    </a>
+                </c:if>    
+                <c:if test="${TabActive ne 'OrderHistory' }">
+                    <a class="nav-link" href="orderHistory">
+                        <i class="fas fa-shopping-cart"></i>
+                        Order History
+                    </a>
+                </c:if>    
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
