@@ -27,5 +27,11 @@
 	<definition name="childProducts" extends="mainLayout">
 		<put-attribute name="body" value="/WEB-INF/views/user/childProducts.jsp" />
 	</definition>
+	<definition name="openCart" extends="mainLayout">
+		<put-attribute name="body" value="/WEB-INF/views/user/openCart.jsp" />
+	</definition>
+	<definition name="orderHistory" extends="mainLayout">
+		<put-attribute name="body" value="/WEB-INF/views/user/orderHistory.jsp" />
+	</definition>
 
 </tiles-definitions>
