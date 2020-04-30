@@ -1,8 +1,6 @@
 pipeline {
    agent any
-   environment {
-		PATH = "/opt/maven3/bin:$PATH"
-	}
+   
 
    stages {
       stage('Hello') {
@@ -15,11 +13,6 @@ pipeline {
             git credentialsId: 'GITCreds', url: 'https://github.com/MahendraK143/spring-boot-eamples'
          }
       }
-      stage('Maven Build'){
-			steps{
-					
-				sh "mvn clean package"
-			}
-		}
+     
    }
 }
