@@ -1,0 +1,16 @@
+pipeline {
+   agent any
+
+   stages {
+      stage('Hello') {
+         steps {
+            echo 'Hello World'
+         }
+      }
+      stage('Git Checkout') {
+         steps {
+            git credentialsId: 'GITCreds', url: 'https://github.com/MahendraK143/spring-boot-eamples'
+         }
+      }
+   }
+}
