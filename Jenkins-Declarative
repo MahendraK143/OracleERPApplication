@@ -18,8 +18,8 @@ pipeline {
       }
       stage('Maven Build') {
          steps {
-            "cd OracleERPApplication"
-            "mvn clean install"
+            echo "cd OracleERPApplication"
+            echo "mvn clean install"
          }
       }
      
