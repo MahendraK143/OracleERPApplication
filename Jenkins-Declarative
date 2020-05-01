@@ -1,5 +1,9 @@
 pipeline {
    agent any
+     
+   environment {
+      PATH = "%M2_HOME%\bin"
+   }
    
    stages {
       stage('Hello') {
@@ -9,12 +13,13 @@ pipeline {
       }
       stage('Git Checkout') {
          steps {
-            git credentialsId: 'GITCreds', url: 'https://github.com/MahendraK143/spring-boot-eamples'
+            git credentialsId: 'GITCreds', url: 'https://github.com/MahendraK143/OracleERPApplication'
          }
       }
       stage('Maven Build') {
          steps {
-         sh "mvn clean install"
+            "cd OracleERPApplication"
+            "mvn clean install"
          }
       }
      
